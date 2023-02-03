@@ -11,12 +11,24 @@
                         @csrf
                         <div class="form-group mb-3">
                             <label>Nome do Post</label>
-                            <input type="text" class="form-control" name="postName"></input>
+                            <input type="text" class="form-control @error('postName')  is-invalid  @endif" name="postName" value="{{ old('postName') }}"></input>
+                            
+                            @error('postName')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
 
                         <div class="form-group">
                             <label>Conteúdo do Post</label>
-                            <textarea type="text" class="form-control" name="postContent"></textarea>
+                            <textarea type="text" class="form-control" name="postContent">{{ old('postContent') }}</textarea>
+                            
+                            @error('postContent')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
+                            @enderror
                         </div>
                     </div>
                     <div class="card-footer">

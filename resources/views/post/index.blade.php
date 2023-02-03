@@ -10,25 +10,27 @@
 
                 <div class="card-body">
                     @if (count($posts) == 0)
-                        <div class="alert alert-danger"> Não há publicações criadas </div>
+                    <div class="alert alert-danger"> Não há publicações criadas </div>
                     @else
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>NOME</th>
-                                    <th>OPÇÕES</th>
-                                </tr>
-                            </thead>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>NOME</th>
+                                <th>OPÇÕES</th>
+                            </tr>
+                        </thead>
 
-                            <tbody>
-                                @foreach($posts as $post)
+                        <tbody>
+                            @foreach($posts as $post)
+                            <tr>
                                 <th>{{ $post->id }}</th>
                                 <th>{{ $post->name }}</th>
                                 <th></th>
-                                @endforeach
-                            </tbody>
-                        </table>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                     @endif
                 </div>
             </div>
