@@ -25,9 +25,15 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(int $postId = null)
     {
-        return view('post.form');
+        $post = null;
+
+        if ($postId) {
+            $post = Post::where('id', $postId)->first();
+        }
+
+        return view('post.form', compact('post'));
     }
 
     /**

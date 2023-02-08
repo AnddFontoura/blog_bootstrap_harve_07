@@ -26,7 +26,10 @@
                             <tr>
                                 <th>{{ $post->id }}</th>
                                 <th>{{ $post->name }}</th>
-                                <th></th>
+                                <th>
+                                    <a class="btn btn-primary" href="{{ route('post.form_update', [$post->id])}}"> Editar</a>
+
+                                </th>
                             </tr>
                             @endforeach
                         </tbody>
