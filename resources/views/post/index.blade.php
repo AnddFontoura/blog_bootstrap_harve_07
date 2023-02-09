@@ -28,7 +28,8 @@
                                 <th>{{ $post->name }}</th>
                                 <th>
                                     <a class="btn btn-primary" href="{{ route('post.form_update', [$post->id])}}"> Editar</a>
-
+                                    <a class="btn btn-secondary" href="{{ route('post.form_view', [$post->id])}}"> Visualizar</a>
+                                    <a class="btn btn-danger" href="{{ route('post.form_update', [$post->id])}}"> Deletar</a>
                                 </th>
                             </tr>
                             @endforeach

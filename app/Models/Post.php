@@ -16,4 +16,8 @@ class Post extends Model
         'content',
         'user_id'
     ];
+
+    public function userInformation() {
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

@@ -44,12 +44,11 @@ class PostController extends Controller
      */
     public function store(Request $request, int $postId = null)
     {
-        if ($postId){
+        if ($postId) {
             $this->validate($request, [
                 'postName' => 'required|string|min:1|max:254',
                 'postContent' => 'required|string|min:1|max:10000'
             ]);
-    
         } else {
             $this->validate($request, [
                 'postName' => 'required|string|min:1|max:254|unique:posts,name',
@@ -60,17 +59,17 @@ class PostController extends Controller
         $name = $request->post('postName');
         $content = $request->post('postContent');
 
-        if ($postId){
+        if ($postId) {
             Post::where('id', $postId)->update([
                 'user_id' => Auth::user()->id,
-                'name' => $name, 
+                'name' => $name,
                 'content' => $content
             ]);
-        }else{
+        } else {
 
             Post::create([
                 'user_id' => Auth::user()->id,
-                'name' => $name, 
+                'name' => $name,
                 'content' => $content
             ]);
         }
@@ -84,9 +83,11 @@ class PostController extends Controller
      * @param  \App\Models\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function view(int $postId)
     {
-        //
+        $post = Post::where('id', $postId)->first();
+        
+        return view('post.view', compact('post'));
     }
 
     /**

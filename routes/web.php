@@ -25,6 +25,7 @@ Route::prefix('posts')->middleware('auth')->group(function() {
     Route::get('/', [PostController::class, 'index'])->name('post');
     Route::get('form', [PostController::class, 'create'])->name('post.form');
     Route::get('form/{id}', [PostController::class, 'create'])->name('post.form_update');
+    Route::get('view/{id}', [PostController::class, 'view'])->name('post.form_view');
     Route::post('save', [PostController::class, 'store'])->name('post.save');
     Route::post('save/{id}', [PostController::class, 'store'])->name('post.update');
 });
