@@ -8,29 +8,29 @@
             <div class="card">
                 <div class="card-header">Criar nova publicação </div>
                 <div class="card-body">
-                <div class="form-group mb-3">
-                        <label>Nome do Usuário</label>
-                        <p>{{$post->userInformation->name}}</p>
-                    </div>                    
-                    
                     <div class="form-group mb-3">
-                        <label>Nome do Post</label>
-                        <p>{{$post->name}}</p>
+                        <h3>Nome do Usuário</h3>
+                        <h5>{{$post->userInformation->name}}</h5>
                     </div>
 
-                    <div class="form-group">
-                        <label>Conteúdo do Post</label>
-                        <p>{{$post->content}}</p>
+                    <div class="form-group mb-3">
+                        <h3>Nome do Post</h3>
+                        <h5>{{$post->name}}</h5>
                     </div>
 
-                    <div class="form-group">
-                        <label>Criado em</label>
-                        <p>{{$post->created_at}}</p>
+                    <div class="form-group mb-3">
+                        <h3>Conteúdo do Post</h3>
+                        <h5>{{$post->content}}</h5>
                     </div>
 
-                    <div class="form-group">
-                        <label>Atualizado em</label>
-                        <p>{{$post->updated_at}}</p>
+                    <div class="form-group mb-3">
+                        <h3>Criado em</h3>
+                        <h5>{{$post->created_at}}</h5>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <h3>Atualizado em</h3>
+                        <h5>{{$post->updated_at}}</h5>
                     </div>
 
                 </div>
