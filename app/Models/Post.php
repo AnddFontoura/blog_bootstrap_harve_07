@@ -14,7 +14,12 @@ class Post extends Model
     protected $fillable = [
         'name',
         'content',
-        'user_id'
+        'user_id',
+    ];
+
+    public $date = [
+        'created_at',
+        'update_at',
     ];
 
     public function userInformation() {

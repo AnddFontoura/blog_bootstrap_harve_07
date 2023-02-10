@@ -25,12 +25,12 @@
 
                     <div class="form-group mb-3">
                         <h3>Criado em</h3>
-                        <h5>{{$post->created_at}}</h5>
+                        <h5>{{$post->created_at->format('d/m/Y h:i:s')}}</h5>
                     </div>
 
                     <div class="form-group mb-3">
                         <h3>Atualizado em</h3>
-                        <h5>{{$post->updated_at}}</h5>
+                        <h5>{{$post->updated_at->format('d/m/Y h:i:s')}}</h5>
                     </div>
 
                 </div>

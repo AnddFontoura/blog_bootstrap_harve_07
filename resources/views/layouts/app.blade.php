@@ -84,6 +84,7 @@
 
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @yield('page_js')
 </body>
 
 </html>

@@ -28,6 +28,7 @@ Route::prefix('posts')->middleware('auth')->group(function() {
     Route::get('view/{id}', [PostController::class, 'view'])->name('post.form_view');
     Route::post('save', [PostController::class, 'store'])->name('post.save');
     Route::post('save/{id}', [PostController::class, 'store'])->name('post.update');
+    Route::delete('delete', [PostController::class, 'delete'])->name('post.delete');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
